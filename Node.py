@@ -11,11 +11,11 @@ class Node:
             else:
                self.words[word] = 1
 
-    def validate(self, words, vocabulrySize):
+    def validate(self, words, vocabularySize):
         prob = 1.0
         for word in words:
             if(self.words.has_key(word)):
                 prob = prob*(self.words[word] + 1)/(self.count + vocabularySize)
             else:
-                prop = prob/(self.count + vocabularySize)
+                prob = prob/(self.count + vocabularySize)
         return prob
